@@ -1,15 +1,15 @@
+import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
-
-const cache = new InMemoryCache();
-const link = new HttpLink({
-  uri: 'https://api.graphql.jobs/'
-});
+import { createHttpLink } from 'apollo-link-http';
+import fetch from 'node-fetch';
 
 const client = new ApolloClient({
   // Provide required constructor fields
-  cache: cache,
-  link: link,
+  cache: new InMemoryCache(),
+  link: createHttpLink({
+    fetch,
+    uri: 'https://api.graphql.jobs/'
+  }),
 
   // Provide some optional constructor fields
   name: 'react-web-client',
