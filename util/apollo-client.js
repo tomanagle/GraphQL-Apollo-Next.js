@@ -4,6 +4,7 @@ import withApollo from 'next-with-apollo';
 import { createHttpLink } from 'apollo-link-http';
 import fetch from 'isomorphic-unfetch';
 
+// Update the GraphQL endpoint to any instance of GraphQL that you like
 const GRAPHQL_URL = 'https://api.graphql.jobs/';
 
 const link = createHttpLink({
@@ -11,10 +12,16 @@ const link = createHttpLink({
   uri: GRAPHQL_URL
 });
 
+// Export a HOC from next-with-apollo
+// Docs: https://www.npmjs.com/package/next-with-apollo
 export default withApollo(
+  // You can get headers and ctx (context) from the callback params
+  // e.g. ({ headers, ctx, initialState })
   ({ initialState }) =>
     new ApolloClient({
       link: link,
-      cache: new InMemoryCache().restore(initialState || {})
+      cache: new InMemoryCache()
+        //  rehydrate the cache using the initial data passed from the server:
+        .restore(initialState || {})
     })
 );
