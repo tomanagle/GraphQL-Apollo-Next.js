@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/react-hooks';
-import Nav from '../components/nav';
 import JOBS_QUERY from '../graphql/jobs.query';
 
 const Home = () => {
@@ -13,20 +12,15 @@ const Home = () => {
   }
 
   if (error) {
-    return JSON.stringify(error);
+    return <p>Error: {JSON.stringify(error)}</p>;
   }
   return (
     <div>
       <Head>
         <title>Home</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Nav />
-
-      {data.jobs.map(job => {
-        return <li key={job.id}>{job.title}</li>;
-      })}
+      {JSON.stringify(data)}
     </div>
   );
 };
