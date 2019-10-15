@@ -20,7 +20,11 @@ const Home = () => {
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {JSON.stringify(data)}
+      <ul>
+        {data.jobs.map(job => {
+          return <li key={`job__${job.id}`}>{job.title}</li>;
+        })}
+      </ul>
     </div>
   );
 };
