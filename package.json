@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix . && echo 'Lint complete.'",
-    "lint:watch": "watch 'clear && npm run -s test | tap-nirvana && npm run -s lint' src"
+    "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",
