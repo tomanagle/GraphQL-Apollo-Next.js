@@ -5,18 +5,29 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint --fix . && echo 'Lint complete.'",
+    "lint:watch": "watch 'clear && npm run -s test | tap-nirvana && npm run -s lint' src"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link-http": "^1.5.16",
+    "eslint": "^6.5.1",
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
     "next": "9.1.1",
+    "next-with-apollo": "^4.3.0",
     "node-fetch": "^2.6.0",
     "react": "16.10.2",
     "react-dom": "16.10.2"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "prettier": "^1.18.2"
   }
 }
