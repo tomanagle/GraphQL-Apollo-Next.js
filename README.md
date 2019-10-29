@@ -1,3 +1,5 @@
+[![GitHub forks](https://img.shields.io/github/forks/tomanagle/GraphQL-Apollo-Next.js?style=for-the-badge)](https://github.com/tomanagle/GraphQL-Apollo-Next.js/network)
+[![GitHub stars](https://img.shields.io/github/stars/tomanagle/GraphQL-Apollo-Next.js?style=for-the-badge)](https://github.com/tomanagle/GraphQL-Apollo-Next.js/stargazers)
 ### Getting started
 
 ```git clone git@github.com:tomanagle/GraphQL-Apollo-Next.js.git```
