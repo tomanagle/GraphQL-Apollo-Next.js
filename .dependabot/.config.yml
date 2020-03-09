@@ -1,0 +1,13 @@
+version: 1
+update_configs:
+  # Server NPM packages
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "daily"
+    target_branch: "master"
+    default_reviewers:
+      - "tomanagle"
+    default_labels:
+      - "server"
+      - "dependencies"
+      - "dependabot"
