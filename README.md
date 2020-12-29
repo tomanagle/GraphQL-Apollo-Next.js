@@ -12,3 +12,6 @@
 ```yarn dev```
 
 Read the full article here: https://medium.com/@tomanagle/create-a-server-side-rendering-graphql-client-with-next-js-and-apollo-client-acd397f70c64
+
+
+For a production-grade, ready to use starter pack go to: https://github.com/tomanagle/NextJS-NestJS-GraphQL-Starter
