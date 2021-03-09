@@ -1,0 +1,12 @@
+overwrite: true
+schema: "http://localhost/graphql/delivery/hello-brightspot"
+documents: "components/**/*/queries.ts"
+generates:
+  generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
