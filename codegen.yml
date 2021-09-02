@@ -1,5 +1,8 @@
 overwrite: true
-schema: "http://localhost/graphql/delivery/hello-brightspot"
+schema:
+  - http://localhost/graphql/delivery/hello-brightspot:
+      headers:
+        X-API-KEY: <API KEY GOES HERE>
 documents: "components/**/*/queries.ts"
 generates:
   generated/graphql.tsx:
