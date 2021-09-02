@@ -4,6 +4,7 @@ export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+const defaultOptions =  {}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -13,15 +14,15 @@ export type Scalars = {
   Float: number;
 };
 
-
 /** A warm Brightspot welcome */
 export type HelloBrightspot = {
   __typename?: 'HelloBrightspot';
-  /** A friendly welcome message. */
+  /**
+   * A friendly welcome message.
+   *
+   */
   message?: Maybe<Scalars['String']>;
 };
-
-export type PageEntry = HelloBrightspot;
 
 export type Query = {
   __typename?: 'Query';
@@ -41,13 +42,7 @@ export type HelloBrightspotQueryVariables = Exact<{
 }>;
 
 
-export type HelloBrightspotQuery = (
-  { __typename?: 'Query' }
-  & { HelloBrightspot?: Maybe<(
-    { __typename?: 'HelloBrightspot' }
-    & Pick<HelloBrightspot, 'message'>
-  )> }
-);
+export type HelloBrightspotQuery = { __typename?: 'Query', HelloBrightspot?: Maybe<{ __typename?: 'HelloBrightspot', message?: Maybe<string> }> };
 
 
 export const HelloBrightspotDocument = gql`
@@ -76,10 +71,12 @@ export const HelloBrightspotDocument = gql`
  * });
  */
 export function useHelloBrightspotQuery(baseOptions?: Apollo.QueryHookOptions<HelloBrightspotQuery, HelloBrightspotQueryVariables>) {
-        return Apollo.useQuery<HelloBrightspotQuery, HelloBrightspotQueryVariables>(HelloBrightspotDocument, baseOptions);
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<HelloBrightspotQuery, HelloBrightspotQueryVariables>(HelloBrightspotDocument, options);
       }
 export function useHelloBrightspotLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<HelloBrightspotQuery, HelloBrightspotQueryVariables>) {
-          return Apollo.useLazyQuery<HelloBrightspotQuery, HelloBrightspotQueryVariables>(HelloBrightspotDocument, baseOptions);
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<HelloBrightspotQuery, HelloBrightspotQueryVariables>(HelloBrightspotDocument, options);
         }
 export type HelloBrightspotQueryHookResult = ReturnType<typeof useHelloBrightspotQuery>;
 export type HelloBrightspotLazyQueryHookResult = ReturnType<typeof useHelloBrightspotLazyQuery>;
