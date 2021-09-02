@@ -26,11 +26,11 @@
     "react-dom": "16.10.2"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.20.1",
-    "@graphql-codegen/introspection": "1.18.1",
-    "@graphql-codegen/typescript": "1.21.0",
-    "@graphql-codegen/typescript-operations": "1.17.14",
-    "@graphql-codegen/typescript-react-apollo": "2.2.1",
+    "@graphql-codegen/cli": "2.1.1",
+    "@graphql-codegen/introspection": "2.1.0",
+    "@graphql-codegen/typescript": "2.1.2",
+    "@graphql-codegen/typescript-operations": "2.1.2",
+    "@graphql-codegen/typescript-react-apollo": "3.1.2",
     "@types/react": "^17.0.2",
     "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^6.4.0",
