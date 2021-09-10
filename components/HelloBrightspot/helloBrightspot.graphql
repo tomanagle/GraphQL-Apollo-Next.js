@@ -1,0 +1,5 @@
+query HelloBrightspot($id: ID, $path: String) {
+  HelloBrightspot(id: $id, path: $path) {
+    message
+  }
+}

@@ -3,7 +3,7 @@ schema:
   - http://localhost/graphql/delivery/hello-brightspot:
       headers:
         X-API-KEY: <API KEY GOES HERE>
-documents: "components/**/*/queries.ts"
+documents: "components/**/*.graphql"
 generates:
   generated/graphql.tsx:
     plugins:
