@@ -10,10 +10,6 @@ import fetch from 'isomorphic-unfetch';
 import { createPersistedQueryLink } from '@apollo/client/link/persisted-queries';
 import { sha256 } from 'crypto-hash';
 
-// Update the GraphQL endpoint to any instance of GraphQL that you like
-const GRAPHQL_URL = 'http://localhost/graphql/delivery/hello-brightspot';
-const API_KEY = '<API KEY GOES HERE>';
-
 const persistedQueriesLink = createPersistedQueryLink({
   sha256,
   useGETForHashedQueries: true
@@ -35,9 +31,9 @@ export default withApollo(({ initialState }) => {
     link: persistedQueriesLink.concat(
       createHttpLink({
         fetch, // Switches between unfetch & node-fetch for client & server.
-        uri: GRAPHQL_URL,
+        uri: process.env.GRAPHQL_URL,
         headers: {
-          'X-API-Key': API_KEY
+          'X-API-Key': process.env.API_KEY
         }
       })
     ),
