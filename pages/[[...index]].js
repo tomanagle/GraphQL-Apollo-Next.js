@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useHelloBrightspotQuery } from '../generated/graphql';
+import { useHelloBrightspotQuery } from '../generated/helloBrightspot';
 
 const Home = () => {
   const router = useRouter();
